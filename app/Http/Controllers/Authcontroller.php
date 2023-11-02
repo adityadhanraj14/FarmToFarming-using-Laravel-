@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Farmer;
 use App\Models\Client;
+use App\Models\Form;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 
@@ -99,5 +100,26 @@ class Authcontroller extends Controller
         ]);
         $clientdata->save();
         echo "data saved succesfully";
+    }
+    public function admindashboard(){
+        return view('AdminDashboard.index');
+    }
+    public function addedit(){
+        return view('AdminDashboard.editadd');
+    }
+    public function formsave(Request $request){
+        $form= new Form([
+            'name'=>$request->get('name'),
+            'adress'=>$request->get('adress'),
+            'phone'=>$request->get('phone'),
+            'state'=>$request->get('state'),
+            'pincode'=>$request->get('pincode')
+        ]);
+        $form->save();
+        return redirect()->route('display');
+    }
+    public function display(){
+        $data1= Form::all();
+        return view('AdminDashboard.index',['userdata'=>$data1]);
     }
 }

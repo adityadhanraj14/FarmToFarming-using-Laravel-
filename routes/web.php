@@ -35,6 +35,13 @@ Route::get('category2',[Authcontroller::class,'category2'])->name('category2.cho
 Route::post('farmer',[Authcontroller::class,'farmerregister'])->name('farmer.register');
 Route::post('client',[Authcontroller::class,'clientregister'])->name('client.register');
 
+//editbtn admindashboard
+Route::get('admin/dashboard',[Authcontroller::class,'admindashboard'])->name('admindashboard');
+Route::get('/add',[Authcontroller::class,'addedit'])->name('addedit');
+Route::post('submit',[Authcontroller::class,'formsave'])->name('form.submit');
+Route::get('admin/dashboard',[Authcontroller::class,'display'])->name('display');
+
+
 
 
 
