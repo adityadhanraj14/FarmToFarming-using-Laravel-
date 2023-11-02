@@ -105,7 +105,11 @@ class Authcontroller extends Controller
         return view('AdminDashboard.index');
     }
     public function addedit(){
-        return view('AdminDashboard.editadd');
+        $url=url('/submit');
+        $btnname='save';
+        $form= new Form();
+        $data=compact('url','btnname','form');
+        return view('AdminDashboard.editadd')->with($data);
     }
     public function formsave(Request $request){
         $form= new Form([
@@ -121,5 +125,25 @@ class Authcontroller extends Controller
     public function display(){
         $data1= Form::all();
         return view('AdminDashboard.index',['userdata'=>$data1]);
+    }
+    public function edit($id){
+        $form=Form::find($id);
+        $url=url('/form/update').'/'.$id;
+        $btnname='Update';
+        $data=compact('form','url','btnname');
+        return view('AdminDashboard.editadd')->with($data);
+        
+    }
+    public function update($id ,Request $request){
+        $form = Form::find($id);
+        $form->update([
+            'name'=>$request->get('name'),
+            'adress'=>$request->get('adress'),
+            'phone'=>$request->get('phone'),
+            'state'=>$request->get('state'),
+            'pincode'=>$request->get('pincode')
+        ]);
+        $form->save();
+        return redirect()->route('display');  
     }
 }

@@ -38,8 +38,10 @@ Route::post('client',[Authcontroller::class,'clientregister'])->name('client.reg
 //editbtn admindashboard
 Route::get('admin/dashboard',[Authcontroller::class,'admindashboard'])->name('admindashboard');
 Route::get('/add',[Authcontroller::class,'addedit'])->name('addedit');
-Route::post('submit',[Authcontroller::class,'formsave'])->name('form.submit');
+Route::post('/submit',[Authcontroller::class,'formsave'])->name('form.submit');
 Route::get('admin/dashboard',[Authcontroller::class,'display'])->name('display');
+Route::get('form/edit/{id}',[Authcontroller::class,'edit'])->name('form.edit');
+Route::post('form/update/{id}',[Authcontroller::class,'update'])->name('form.update');
 
 
 

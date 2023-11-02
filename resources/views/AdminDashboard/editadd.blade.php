@@ -58,31 +58,32 @@
 
 <div class="container">
   <h2>client Information</h2>
-  <form action="{{route('form.submit')}}" method="post">
+  <form action="{{$url}}" method="post">
     @csrf
     <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
+    <input type="text" id="name" name="name" value= "{{$form->name}}" required>
 
     <label for="address">Address:</label>
-    <input type="text" id="address" name="adress" required>
+    <input type="text" id="address" name="adress" value="{{$form->adress}}" required>
 
     <label for="phone">Phone:</label>
-    <input type="tel" id="phone" name="phone" required>
+    <input type="tel" id="phone" name="phone" value="{{$form->phone}}"required>
 
     <label for="state">State:</label>
-    <select id="state" name="state" required>
-      <option value="Select">Select</option>
-      <option value="Bihar">Bihar</option>
-      <option value="Bengalure">Bengalure</option>
-      <option value="Gujrat">Gujrat</option>
-      <option value="Goa">Goa</option>
-      <!-- Add more options for other states -->
-    </select>
+<select id="state" name="state" required>
+  <option value="Select" @if ($form->state == 'Select') selected @endif>Select</option>
+  <option value="Bihar" @if ($form->state == 'Bihar') selected @endif>Bihar</option>
+  <option value="Bengalure" @if ($form->state == 'Bengalure') selected @endif>Bengalure</option>
+  <option value="Gujrat" @if ($form->state == 'Gujrat') selected @endif>Gujrat</option>
+  <option value="Goa" @if ($form->state == 'Goa') selected @endif>Goa</option>
+  <!-- Add more options for other states -->
+</select>
+
 
     <label for="pincode">Pincode:</label>
-    <input type="text" id="pincode" name="pincode" required>
+    <input type="text" id="pincode" name="pincode" value="{{$form->pincode}}" required>
 
-    <button type="submit">Submit</button>
+    <button type="submit">{{$btnname}}</button>
   </form>
 </div>
 

@@ -39,16 +39,22 @@
             <th>Phone</th>
             <th>State</th>
             <th>Pincode</th>
+            <th>Action</th>
         </tr>
         @php $i=1;@endphp
                 @foreach($userdata as $formdata)
         <tr>
             <td>{{$i}}</td>
-            <td>{{@$formdata->name}}</td>
-            <td>{{@$formdata->adress}}</td>
-            <td>{{@$formdata->phone}}</td>
-            <td>{{@$formdata->state}}</td>
-            <td>{{@$formdata->pincode}}</td>
+            <td>{{$formdata->name}}</td>
+            <td>{{$formdata->adress}}</td>
+            <td>{{$formdata->phone}}</td>
+            <td>{{$formdata->state}}</td>
+            <td>{{$formdata->pincode}}</td>
+            <td>
+                <a href="{{route('form.edit',['id'=>$formdata->id])}}">
+                edit
+                </a>
+            </td>
         </tr>
         @php $i++ @endphp
                 @endforeach
