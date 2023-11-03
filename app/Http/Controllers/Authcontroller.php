@@ -146,4 +146,8 @@ class Authcontroller extends Controller
         $form->save();
         return redirect()->route('display');  
     }
+    public function delete($id){
+        Form::find($id)->delete();
+        return redirect()->route('display');  
+    }
 }

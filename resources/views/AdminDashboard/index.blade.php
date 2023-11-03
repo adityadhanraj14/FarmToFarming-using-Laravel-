@@ -54,6 +54,9 @@
                 <a href="{{route('form.edit',['id'=>$formdata->id])}}">
                 edit
                 </a>
+                <a href="{{route('form.delete',['id'=>$formdata->id])}}">
+                delete
+                </a>
             </td>
         </tr>
         @php $i++ @endphp

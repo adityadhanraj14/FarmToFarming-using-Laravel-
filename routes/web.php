@@ -43,7 +43,5 @@ Route::get('admin/dashboard',[Authcontroller::class,'display'])->name('display')
 Route::get('form/edit/{id}',[Authcontroller::class,'edit'])->name('form.edit');
 Route::post('form/update/{id}',[Authcontroller::class,'update'])->name('form.update');
 
-
-
-
-
+//delete admindashboard
+Route::get('/form/delete/{id}',[Authcontroller::class,'delete'])->name('form.delete');
