@@ -1,66 +1,82 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# FarmToFarming
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+FarmToFarming is a web application designed to connect farmers and landowners, enabling seamless registration, land management, and dashboard functionalities.
 
-## About Laravel
+## Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- Farmer and client registration
+- Land registration and management
+- Admin dashboard for managing users and land data
+- User dashboards for farmers and clients
+- Image upload and display (e.g., soil reports)
+- Responsive UI with Bootstrap
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Getting Started
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Prerequisites
 
-## Learning Laravel
+- PHP >= 7.4
+- Composer
+- Node.js & npm
+- MySQL
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Demo Video
+https://github.com/user-attachments/assets/d192ee05-c718-4b1c-b941-f16549b1f2d1
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## UI/Dashboard Screenshots.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Landing page
+<img width="1850" height="821" alt="Screenshot 2025-09-03 020131" src="https://github.com/user-attachments/assets/06f4e94a-cc5e-43f4-82bd-076f0d4578d9" />
 
-## Laravel Sponsors
+### login/signup 
+<img width="1059" height="859" alt="Screenshot 2025-09-03 020113" src="https://github.com/user-attachments/assets/02cbd227-53bf-4bfd-ba6c-fd94b851c9a4" />
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### Home page
+<img width="1911" height="946" alt="Screenshot 2025-09-03 020052" src="https://github.com/user-attachments/assets/88c57165-3030-445a-b501-d43411bf55af" />
 
-### Premium Partners
+### Detail form
+<img width="1885" height="954" alt="Screenshot 2025-09-03 020037" src="https://github.com/user-attachments/assets/41d6ec11-6982-4b2c-a1fa-f68d0a110393" />
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+### Dashboard for farmers
+<img width="1895" height="940" alt="Screenshot 2025-09-03 020017" src="https://github.com/user-attachments/assets/f1b360fc-3e39-413e-8b5b-77f859be409e" />
 
-## Contributing
+## DataBase Model structure to store farmer-land details
+<img width="1744" height="917" alt="image" src="https://github.com/user-attachments/assets/deae1085-96be-4955-94a7-dbb08adc1ab7" />
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
+### Installation
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/yourusername/FarmToFarming.git
+   cd FarmToFarming
+   ```
 
-## Security Vulnerabilities
+2. Install PHP dependencies:
+   ```sh
+   composer install
+   ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+3. Install JavaScript dependencies:
+   ```sh
+   npm install
+   ```
 
-## License
+4. Copy `.env.example` to `.env` and configure your environment variables.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+5. Generate application key:
+   ```sh
+   php artisan key:generate
+   ```
+
+6. Run migrations:
+   ```sh
+   php artisan migrate
+   ```
+
+7. Start the development server:
+   ```sh
+   php artisan serve
+   ```
+
+
